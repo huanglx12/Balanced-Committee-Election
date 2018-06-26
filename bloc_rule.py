@@ -285,8 +285,8 @@ def run_ilp_bloc_pro_allsolution(candidate, score, k, lM, uM, lF, uF, lJ, uJ, lA
 
     opt = cpx.solution.get_objective_value() # compute the score of the optimal committee with fairness constraints
 
-    cpx.parameters.mip.pool.absgap.set(0.0001) # ensure to compute optimal committees
-    cpx.parameters.mip.limits.populate.set(10000) # output at most 100 optimal committees. The number 100 can be modified accordingly.
+    cpx.parameters.mip.pool.absgap.set(0) # ensure to compute optimal committees
+    cpx.parameters.mip.limits.populate.set(1000000) # output at most 100 optimal committees. The number 100 can be modified accordingly.
     cpx.parameters.mip.pool.intensity.set(4)
     cpx.populate_solution_pool()
 
